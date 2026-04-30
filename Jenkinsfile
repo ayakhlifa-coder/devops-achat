@@ -1,11 +1,9 @@
 pipeline {
     agent any
-
     environment {
         JAVA_HOME = '/usr/lib/jvm/java-21-openjdk-amd64'
         PATH = "/usr/lib/jvm/java-21-openjdk-amd64/bin:/usr/share/maven/bin:${env.PATH}"
     }
-
     stages {
         stage('Checkout') {
             steps {
@@ -36,7 +34,12 @@ pipeline {
             }
         }
     }
-
     post {
         success {
-            echo 'Build réussi!'
+            echo 'Build reussi!'
+        }
+        failure {
+            echo 'Build echoue!'
+        }
+    }
+}
