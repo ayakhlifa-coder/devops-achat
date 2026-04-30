@@ -30,14 +30,13 @@ pipeline {
                 }
             }
         }
+        stage('Deploy to Nexus') {
+            steps {
+                sh 'mvn deploy -DskipTests'
+            }
+        }
     }
 
     post {
         success {
             echo 'Build réussi!'
-        }
-        failure {
-            echo 'Build échoué!'
-        }
-    }
-}
