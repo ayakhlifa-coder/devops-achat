@@ -31,3 +31,9 @@ build/
 
 ### VS Code ###
 .vscode/
+
+# Security - sensitive files
+*.env
+application-prod.properties
+secrets/
+docker-compose.override.yml
